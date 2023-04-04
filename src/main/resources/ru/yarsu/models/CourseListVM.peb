@@ -1,0 +1,32 @@
+{% extends "./layout.peb"%}
+{% block content %}
+    <h3>Список преподавателей: </h3>
+    <ul>
+            {% for course in model.courses %}
+                <li><a href="lecturers/{{ course.lecturerFullName }}">{{ course.lecturerFullName }}</a></li>
+            {% endfor %}
+    </ul>
+    <h3>Курсы: </h3>
+    <table class="hover unstriped">
+        <thead>
+            <tr>
+                <td>Название курса</td>
+                <td>ФИО преподавателя</td>
+                <td>Краткое описание курса</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in model.courses %}
+                <tr>
+                    <td> {{ course.courseName }} </td>
+                    <td> <a href="lecturers/{{ course.lecturerFullName }}">{{ course.lecturerFullName }}</a> </td>
+                    <td> {{ course.description }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+

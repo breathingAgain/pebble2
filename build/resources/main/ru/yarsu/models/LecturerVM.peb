@@ -1,0 +1,9 @@
+    {% extends "./layout.peb"%}
+    {% block content %}
+    <h3>Список дисциплин: </h3>
+    <ul>
+            {% for course in model.courses %}
+                <li>{{ course.courseName }}</li>
+            {% endfor %}
+    </ul>
+{% endblock %}
